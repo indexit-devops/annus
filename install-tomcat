@@ -1,0 +1,19 @@
+yum install tomcat
+systemctl start tomcat
+
+verify tomcat:
+systemctl status tomcat
+ps -ef |grep tomcat
+
+Location of Applications:
+Dir : /var/lib/tomcat/webapps
+
+
+Host sample application:
+
+# cd /var/lib/tomcat/webapps
+# wget https://tomcat.apache.org/tomcat-6.0-doc/appdev/sample/sample.war
+
+
+Acess application over browser:
+http://<Externalip>:8080/sample
