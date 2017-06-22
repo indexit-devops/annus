@@ -1,0 +1,21 @@
+yum install httpd
+systemctl start httpd
+
+Where you keep web sites?
+Dir : /var/www/html
+
+Sample Web Site:
+# cd /var/www/html
+# mkdir student
+# cat index.html
+Hello World, This is a sample project.
+
+
+
+
+Access web site on browser
+
+http://<External-IP-of-Server>/student
+
+
+
