@@ -49,9 +49,9 @@ vagrant plugin install vagrant-google
 # vim Vagrantfile
 Vagrant.configure("2") do |config|
 
-  config.vm.box = "google/gce"
-
-  config.vm.provider :google do |google, override|
+    config.vm.box = "google/gce"
+    config.vm.provision "shell", path: "https://raw.githubusercontent.com/indexit-devops/annus/master/init.sh"
+    config.vm.provider :google do |google, override|
     google.google_project_id = "mor8am"
     google.google_client_email = "provision@mor8am.iam.gserviceaccount.com" 
     google.google_json_key_location = "/root/provision.json"
