@@ -35,3 +35,7 @@ MariaDB>
 > insert into students (name) VALUES ('Rama');
 ```
 
+### Add remote access to DB.
+```
+> grant all privileges on demo.* to 'demo'@'10.128.0.3' identified by 'demo1234';
+```
