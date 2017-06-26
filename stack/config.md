@@ -58,4 +58,46 @@ http://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.0.M21/bin/apache-tomcat-9.0.0
 # sh startup.sh
 ```
 
+### Steps to Install MOD_JK 
+```
+cd /opt
+wget http://www-eu.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors-1.2.42-src.tar.gz
+tar -xf tomcat-connectors-1.2.42-src.tar.gz
+cd tomcat-connectors-1.2.42-src/native
+yum install httpd-devel gcc -y
+./configure --with-prefix=/bin/apxs
+make
+make install
+```
+
+### Steps to configure webserver with mod_jk
+
+#### Create the following files with content followed.
+
+```
+# vim /etc/httpd/conf.d/mod_jk.conf
+
+LoadModule jk_module modules/mod_jk.so
+JkWorkersFile conf.d/workers.properties
+JkLogFile logs/mod_jk.log
+JkLogLevel info
+JkLogStampFormat "[%a %b %d %H:%M:%S %Y]"
+JkOptions +ForwardKeySize +ForwardURICompat -ForwardDirectories
+JkRequestLogFormat "%w %V %T"
+#Send everything for context /test to worker ajp13
+JkMount /student app1
+JkMount /student/* app1
+
+
+
+# vim /etc/httpd/conf.d/workers.properties
+worker.list=app1
+# Set properties
+worker.app1.type=ajp13
+### Change the IP address of your app server.
+worker.app1.host=10.128.0.3
+worker.app1.port=8009
+```
+
+
 
