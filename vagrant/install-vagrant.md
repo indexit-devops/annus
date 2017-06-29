@@ -23,7 +23,7 @@ vagrant plugin install vagrant-google
 
 ### 5) Copy the JSON file from windows to linux.
 ```
-# vim /root/provision.pem
+# vim /root/provision.json
 <Copy and Paste the JSON file for the service account you created>
 ```
 
