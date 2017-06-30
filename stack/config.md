@@ -22,7 +22,7 @@
 	student_year_passed VARCHAR(10) NOT NULL,
 	PRIMARY KEY (student_id)
 );
-> grant all privileges on demo.* to 'studentapp'@'10.128.0.3' identified by 'student1234';
+> grant all privileges on student.* to 'studentapp'@'10.128.0.3' identified by 'student1234';
 > quit;
 ```
 ### 2) Get your applicaztion server ready.
