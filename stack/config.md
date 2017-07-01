@@ -66,7 +66,7 @@ wget http://www-eu.apache.org/dist/tomcat/tomcat-connectors/jk/tomcat-connectors
 tar -xf tomcat-connectors-1.2.42-src.tar.gz
 cd tomcat-connectors-1.2.42-src/native
 yum install httpd-devel gcc -y
-./configure --with-prefix=/bin/apxs
+./configure --with-apxs=/bin/apxs
 make
 make install
 ```
