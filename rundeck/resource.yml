@@ -1,0 +1,6 @@
+rdnode1:
+  hostname: rdnode1
+  nodename: rdnode1
+  username: admin
+  tags: 'DEV'
+rdnode2:  {hostname: rdnode2, nodename: rdnode2, username: admin, tags: 'PROD'}
