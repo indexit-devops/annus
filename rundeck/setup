@@ -1,0 +1,9 @@
+# Update /etc/rundeck/rundeck-config.properties with External IP address.
+# Resource file : /var/rundeck/projects/sample/etc/resource.yml
+
+Default User / Password : admin / admin
+
+1) Create Project 
+2) Add nodes
+3) Add key
+4) Run some commands
